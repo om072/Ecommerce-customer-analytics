@@ -123,8 +123,8 @@ streamlit run app.py
 * Integrate predictive analytics for customer lifetime value (CLV) and churn prediction
 * Deploy the app online using Streamlit Cloud, AWS, or Azure
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## Deployment Link
+This project is deployed on - https://ecommerce-customer-analytics-om072.streamlit.app/
 
 ## Author
 OM KHANGAT
