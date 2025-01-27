@@ -1,157 +1,120 @@
-# eCommerce Customer Analytics
+# Customer Analytics Dashboard
 
-## Project Overview
-This project performs comprehensive analysis of eCommerce transaction data to derive business insights and build customer analytics models. The analysis includes exploratory data analysis (EDA), customer lookalike modeling, and customer segmentation using clustering techniques.
+This project provides a comprehensive analytics dashboard to analyze customer data, visualize trends, and offer actionable insights. The dashboard is built using Streamlit and supports interactive features like customer segmentation, lookalike models, and product recommendations.
 
-## Table of Contents
-* [Dataset Description](#dataset-description)
-* [Project Structure](#project-structure)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Features](#features)
-* [Results](#results)
-* [Technologies Used](#technologies-used)
+## Assignment Questions and Answers
 
-## Dataset Description
-The analysis uses three main datasets:
+### 1. Perform EDA on the provided dataset.
 
-1. **Customers.csv**
-   * CustomerID: Unique identifier for each customer
-   * CustomerName: Name of the customer
-   * Region: Continent where the customer resides
-   * SignupDate: Date when the customer signed up
+The EDA process includes:
 
-2. **Products.csv**
-   * ProductID: Unique identifier for each product
-   * ProductName: Name of the product
-   * Category: Product category
-   * Price: Product price in USD
+* **Customer Analysis:**
+    * Distribution by region
+    * Signup dates and trends over time
 
-3. **Transactions.csv**
-   * TransactionID: Unique identifier for each transaction
-   * CustomerID: ID of the customer who made the transaction
-   * ProductID: ID of the product sold
-   * TransactionDate: Date of the transaction
-   * Quantity: Quantity of the product purchased
-   * TotalValue: Total value of the transaction
-   * Price: Price of the product sold
+* **Product Analysis:**
+    * Most popular categories
+    * Distribution of product sales
 
-## Project Structure
+* **Transaction Analysis:**
+    * Transaction values over time
+    * Total revenue and average transaction value
+
+Plots and metrics generated during EDA are saved in the `eda_plots` directory.
+
+### 2. Derive at least 5 business insights from the EDA.
+
+Here are the insights derived from the EDA:
+
+1. **Regional Concentration:**
+    * The majority of customers are concentrated in a few specific regions, indicating strong geographic preferences
+    * These regions can be prioritized for targeted marketing campaigns
+
+2. **Category Popularity:**
+    * One or two product categories dominate sales, contributing significantly to revenue
+    * Diversifying product offerings within these categories could increase cross-sell opportunities
+
+3. **Revenue Seasonality:**
+    * Transaction analysis reveals peaks during specific months, likely linked to holidays or seasonal demand
+    * Planning inventory and marketing around these peaks can enhance profitability
+
+4. **High-Value Customers:**
+    * A small group of customers contributes disproportionately to the total revenue
+    * Developing loyalty programs for these high-value customers can improve retention and lifetime value
+
+5. **Underperforming Regions:**
+    * Certain regions show significantly lower customer engagement and revenue
+    * Exploring factors like product availability, pricing, or local preferences can help tap into these markets
+
+## Deliverables
+
+1. **EDA Code**
+    * The EDA code is implemented in the `utils.py` module and executed as part of the `app.py` script
+    * Key metrics and visualizations generated during EDA are saved in the `eda_plots` directory
+
+2. **Business Insights**
+    * A PDF report summarizing the above insights is included in the `results` directory
+
+## Directory Structure
 ```
-ecommerce-customer-analytics/
-│
-├── data/
-│   ├── Customers.csv
-│   ├── Products.csv
-│   └── Transactions.csv
-│
-├── notebooks/
-│   ├── EDA.ipynb
-│   ├── Lookalike_Model.ipynb
-│   └── Customer_Segmentation.ipynb
-│
-├── src/
-│   ├── __init__.py
-│   ├── data_loader.py
-│   ├── eda_analysis.py
-│   ├── lookalike_model.py
-│   └── clustering.py
-│
-├── results/
-│   ├── eda_plots/
-│   ├── Lookalike.csv
-│   └── clustering_results/
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
+/data
+    - Customers.csv
+    - Products.csv
+    - Transactions.csv
+/utils.py
+/app.py
+/results
+    - recommendations_<CustomerID>.csv (saved recommendation files)
+    - business_insights_report.pdf (PDF report with EDA insights)
+/eda_plots
+    - customer_region_distribution.png
+    - product_category_distribution.png
+    - daily_transactions.png
 ```
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/ecommerce-customer-analytics.git
-cd ecommerce-customer-analytics
+git clone 
+cd 
 ```
 
-2. Create a virtual environment and activate it:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install required packages:
+2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
+3. Ensure the data directory contains the following CSV files:
+    * Customers.csv
+    * Products.csv
+    * Transactions.csv
+
 ## Usage
 
-1. **Data Preparation**:
-   * Place your CSV files in the `data/` directory
-   * Ensure the file names match the expected format
-
-2. **Run EDA**:
+1. Run the Streamlit app:
 ```bash
-python src/eda_analysis.py
+streamlit run app.py
 ```
 
-3. **Generate Lookalike Recommendations**:
-```bash
-python src/lookalike_model.py
-```
+2. Open the app in your browser at the URL displayed in the terminal (default: http://localhost:8501)
 
-4. **Perform Customer Segmentation**:
-```bash
-python src/clustering.py
-```
-
-## Features
-
-### 1. Exploratory Data Analysis
-* Customer distribution analysis
-* Product category analysis
-* Transaction patterns analysis
-* Key business metrics calculation
-
-### 2. Lookalike Model
-* Customer feature engineering
-* Similarity score calculation
-* Top 3 similar customers recommendations
-* Outputs recommendations for customers C0001-C0020
-
-### 3. Customer Segmentation
-* K-means clustering implementation
-* Davies-Bouldin Index calculation
-* Cluster visualization using PCA
-* Detailed cluster analysis
+3. Navigate through the sidebar options for detailed insights and analyses
 
 ## Results
-The analysis generates several outputs:
 
-1. **EDA Results**:
-   * Visualizations in `results/eda_plots/`
-   * Key metrics summary
-   * Business insights report
+* **EDA Visualizations:** Saved in the `eda_plots` directory
+* **Clustering and Recommendations:** Results saved in the `results` folder
 
-2. **Lookalike Model Results**:
-   * `Lookalike.csv` containing similar customer recommendations
-   * Similarity scores for each recommendation
+## Future Enhancements
 
-3. **Clustering Results**:
-   * Customer segment assignments
-   * Davies-Bouldin Index score
-   * Cluster visualizations
-   * Segment characteristics report
+* Add time range filters for EDA
+* Improve lookalike model with advanced algorithms
+* Integrate predictive analytics for customer lifetime value (CLV) and churn prediction
+* Deploy the app online using Streamlit Cloud, AWS, or Azure
 
-## Technologies Used
-* Python 3.8+
-* pandas
-* numpy
-* scikit-learn
-* matplotlib
-* seaborn
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-## Contributing
-Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
+## Author
+OM KHANGAT
