@@ -1,4 +1,4 @@
-# Customer Analytics Dashboard
+# Ecommerce_customer_analytics
 
 This project provides a comprehensive analytics dashboard to analyze customer data, visualize trends, and offer actionable insights. The dashboard is built using Streamlit and supports interactive features like customer segmentation, lookalike models, and product recommendations.
 
