@@ -2,6 +2,16 @@
 
 This project provides a comprehensive analytics dashboard to analyze customer data, visualize trends, and offer actionable insights. The dashboard is built using Streamlit and supports interactive features like customer segmentation, lookalike models, and product recommendations.
 
+## ScreenShots
+![image](https://github.com/user-attachments/assets/6c2b9aab-5861-49e3-a6d1-8978b63a1928)
+![image](https://github.com/user-attachments/assets/70497136-451c-4cba-91e0-5a8836edb222)
+![image](https://github.com/user-attachments/assets/720f3e52-c15b-4710-9d64-b7ebce4fb189)
+![image](https://github.com/user-attachments/assets/d075f051-473a-4f9d-817a-d36f4d2d2d8d)
+
+
+
+
+
 ## Assignment Questions and Answers
 
 ### 1. Perform EDA on the provided dataset.
